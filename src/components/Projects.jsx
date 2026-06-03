@@ -39,7 +39,7 @@ const projects = [
   {
     number: "03",
     title: "Raikoz",
-    type: "E-commerce Shopify",
+    type: "E-commerce",
     image: raikoz,
     description:
       "Implementación y personalización de tienda digital en Shopify, trabajando diseño visual, estructura de contenido y experiencia enfocada en conversión.",
