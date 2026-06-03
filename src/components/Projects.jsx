@@ -4,15 +4,15 @@ const projects = [
   {
     number: "01",
     title: "Essenza Motors",
-    type: "Premium Automotive Website",
+    type: "Consesionaria premium",
     description:
       "Diseño y desarrollo de una experiencia web premium enfocada en vehículos de alta gama, navegación intuitiva y presentación visual moderna.",
     stack: ["React", "JavaScript", "CSS", "UX/UI"],
   },
   {
     number: "02",
-    title: "Restaurant Website",
-    type: "Interactive Catalog",
+    title: "Restaurant web",
+    type: "Catalago interactivo",
     description:
       "Sitio web para restaurante con catálogo interactivo, búsqueda y filtrado dinámico para mejorar la experiencia del usuario.",
     stack: ["HTML", "CSS", "JavaScript", "UI Design"],
@@ -20,7 +20,7 @@ const projects = [
   {
     number: "03",
     title: "E-commerce Web",
-    type: "Online Store",
+    type: "Tienda en linea",
     description:
       "Tienda digital personalizada con integración de métodos de pago y optimización del flujo de compra.",
     stack: ["WordPress", "WooCommerce", "UX", "Responsive"],
@@ -30,8 +30,8 @@ const projects = [
 function Projects() {
   return (
     <section className="projects" id="projects">
-      <p className="section-label">SELECTED WORK</p>
-      <h2>Projects built with design and code.</h2>
+      <p className="section-label">Mejores proyectos</p>
+      <h2>Proyectos construidos con diseño y código.</h2>
 
       <div className="projects-list">
         {projects.map((project) => (

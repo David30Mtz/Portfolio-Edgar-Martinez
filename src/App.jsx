@@ -5,10 +5,13 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import About from "./components/About";
 import Footer from "./components/Footer";
+import CursorGlow from "./components/CursorGlow";
 
 function App() {
   return (
     <>
+      <CursorGlow />
+
       <Navbar />
 
       <main>

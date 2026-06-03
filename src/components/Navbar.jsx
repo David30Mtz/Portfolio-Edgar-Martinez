@@ -4,9 +4,9 @@ function Navbar() {
       <a href="#" className="logo">EM</a>
 
       <div className="nav-links">
-        <a href="#projects">Work</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#about">Sobre mí</a>
+        <a href="#contact">Contacto</a>
       </div>
     </nav>
   );
