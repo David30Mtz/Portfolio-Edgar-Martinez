@@ -157,70 +157,246 @@ h1 {
   margin-bottom: 18px;
 }
 
-.projects h2 {
-  font-size: clamp(36px, 5vw, 72px);
-  line-height: 1;
-  letter-spacing: -2px;
-  max-width: 760px;
-  margin-bottom: 60px;
-}
-
 .projects-list {
   display: grid;
-  gap: 24px;
+  gap: 32px;
 }
+
+
+/* CARD */
 
 .project-card {
+
   border: 1px solid #1f1f1f;
-  background: linear-gradient(135deg, #111111, #070707);
+
+  background: linear-gradient(
+    135deg,
+    #111111,
+    #070707
+  );
+
+
   border-radius: 28px;
-  padding: 32px;
+
+  padding: 24px;
+
+
   display: grid;
-  grid-template-columns: 80px 1fr;
-  gap: 24px;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+
+  grid-template-columns: 45% 1fr;
+
+  gap: 32px;
+
+
+  overflow: hidden;
+
+
+  transition:
+  transform .35s ease,
+  border-color .35s ease,
+  box-shadow .35s ease;
+
 }
+
+
 
 .project-card:hover {
-  transform: translateY(-6px);
+
+  transform: translateY(-8px);
+
   border-color: var(--accent);
+
+
+  box-shadow:
+  0 30px 80px rgba(139,92,246,.12);
+
 }
+
+
+
+
+/* IMAGEN */
+
+
+.project-image {
+
+  width: 100%;
+
+  height: 260px;
+
+  object-fit: cover;
+
+
+  border-radius: 20px;
+
+
+  border: 1px solid rgba(255,255,255,.08);
+
+
+  transition: transform .5s ease;
+
+}
+
+
+
+.project-card:hover .project-image {
+
+  transform: scale(1.04);
+
+}
+
+
+
+
+
+.project-content {
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+}
+
+
+
 
 .project-number {
+
   color: var(--accent);
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 24px;
+
+  font-family:'Space Grotesk', sans-serif;
+
+  font-size:24px;
+
 }
+
+
 
 .project-type {
+
   color: var(--muted);
-  margin-bottom: 8px;
+
+  margin-bottom:8px;
+
 }
+
+
+
 
 .project-card h3 {
-  font-size: 32px;
-  margin-bottom: 14px;
+
+font-size:32px;
+
+margin-bottom:14px;
+
 }
+
+
+
 
 .project-description {
-  color: var(--muted);
-  line-height: 1.7;
-  max-width: 720px;
-  margin-bottom: 22px;
+
+color:var(--muted);
+
+line-height:1.7;
+
+margin-bottom:22px;
+
 }
+
+
+
 
 .stack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:10px;
+
 }
 
+
+
+
 .stack span {
-  font-size: 13px;
-  color: var(--text);
-  border: 1px solid #2a2a2a;
-  padding: 8px 12px;
-  border-radius: 999px;
+
+font-size:13px;
+
+border:1px solid #2a2a2a;
+
+padding:8px 12px;
+
+border-radius:999px;
+
+}
+
+
+
+/* BOTONES */
+
+.project-links{
+
+display:flex;
+
+gap:14px;
+
+margin-top:24px;
+
+}
+
+
+.project-links a{
+
+text-decoration:none;
+
+color:white;
+
+border:1px solid rgba(255,255,255,.15);
+
+padding:10px 16px;
+
+border-radius:999px;
+
+font-size:14px;
+
+transition:.3s;
+
+}
+
+
+.project-links a:hover{
+
+border-color:var(--accent);
+
+transform:translateY(-3px);
+
+}
+
+
+
+
+/* CEL */
+
+@media(max-width:800px){
+
+.project-card{
+
+grid-template-columns:1fr;
+
+}
+
+
+.project-image{
+
+height:220px;
+
+}
+
+
 }
 
 @media (max-width: 700px) {
@@ -444,5 +620,146 @@ CURSOR GLOW
   transform: translate(-50%, -50%);
 
   z-index: -1;
+
+}
+
+/* NAVBAR */
+
+.navbar {
+  position: fixed;
+
+  top: 24px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: min(1100px, calc(100% - 40px));
+
+  padding: 16px 22px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 100;
+
+  background: rgba(10,10,10,0.7);
+
+  backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 999px;
+}
+
+
+/* DESKTOP */
+
+.logo {
+  color:white;
+  text-decoration:none;
+  font-weight:700;
+}
+
+
+.nav-links {
+  display:flex;
+  gap:24px;
+}
+
+
+.nav-links a {
+  color:var(--muted);
+  text-decoration:none;
+}
+
+
+/* EL BOTON EXISTE PERO OCULTO */
+
+.menu-btn {
+  display:none;
+
+  background:none;
+
+  border:none;
+
+  color:white;
+
+  cursor:pointer;
+}
+
+
+
+/* MENU MOBILE */
+
+.mobile-menu {
+
+  position:absolute;
+
+  top:70px;
+
+  right:0;
+
+
+  width:220px;
+
+  padding:24px;
+
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:18px;
+
+
+  background:rgba(10,10,10,.95);
+
+  backdrop-filter:blur(20px);
+
+
+  border-radius:20px;
+
+  border:1px solid rgba(255,255,255,.1);
+
+}
+
+
+.mobile-menu a {
+
+color:white;
+
+text-decoration:none;
+
+}
+
+
+
+/* SOLO CELULAR */
+
+@media(max-width:700px){
+
+.nav-links{
+
+display:none;
+
+}
+
+
+.menu-btn{
+
+display:block;
+
+}
+
+
+.navbar{
+
+top:18px;
+
+width:calc(100% - 30px);
+
+}
+
 
 }
