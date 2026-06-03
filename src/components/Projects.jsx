@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 
-import essenza from "../assets/projects/essenza.jpg";
-import excentrycal from "../assets/projects/excentrycal.jpg";
-//import raikoz from "../assets/projects/essenza.jpg";
+import essenza from "../assets/projects/essenza.JPG";
+import excentrycal from "../assets/projects/excentrycal.JPG";
+import raikoz from "../assets/projects/essenza.JPG";
 
 
 const projects = [
@@ -40,7 +40,7 @@ const projects = [
     number: "03",
     title: "Raikoz",
     type: "E-commerce",
-    //image: raikoz,
+    image: raikoz,
     description:
       "Implementación y personalización de tienda digital en Shopify, trabajando diseño visual, estructura de contenido y experiencia enfocada en conversión.",
     stack: [
