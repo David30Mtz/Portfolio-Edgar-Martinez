@@ -17,6 +17,8 @@
   }
 }
 
+
+
 .hero {
   position: relative;
 
@@ -181,4 +183,8 @@
     right: 0;
     border-right-color: var(--border);
   }
+
+  
 }
+
+

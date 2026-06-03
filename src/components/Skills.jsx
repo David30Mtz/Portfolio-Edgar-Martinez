@@ -3,25 +3,19 @@ import { motion } from "framer-motion";
 const skills = [
   {
     title: "Frontend",
-    items: [
-      "React",
-      "Vue",
-      "JavaScript",
-      "HTML5",
-      "CSS3",
-    ],
+    items: ["React", "Vue", "JavaScript", "HTML5", "CSS3"],
   },
   {
-    title: "Design",
+    title: "Diseño UX/UI",
     items: [
-      "UX/UI",
       "Figma",
       "Wireframes",
+      "Prototipos",
       "Responsive Design",
     ],
   },
   {
-    title: "Development",
+    title: "Desarrollo",
     items: [
       "Python",
       "Java",
@@ -30,7 +24,7 @@ const skills = [
     ],
   },
   {
-    title: "Tools",
+    title: "Herramientas",
     items: [
       "Git/GitHub",
       "Blender",
@@ -43,11 +37,15 @@ const skills = [
 function Skills() {
   return (
     <section className="skills">
-      <p className="section-label">MY STACK</p>
+
+      <p className="section-label">
+        TECNOLOGÍAS
+      </p>
 
       <h2>
-        Technologies I use to turn ideas into digital products.
+        Herramientas que utilizo para crear experiencias digitales.
       </h2>
+
 
       <div className="skills-grid">
 
@@ -73,23 +71,34 @@ function Skills() {
 
             transition={{
               duration: 0.5,
-              delay: index * 0.15,
+              delay: index * 0.12,
             }}
           >
 
-            <h3>{skill.title}</h3>
+            <h3>
+              {skill.title}
+            </h3>
 
-            {skill.items.map((item) => (
-              <span key={item}>
-                {item}
-              </span>
-            ))}
+            <div className="skill-tags">
+
+              {skill.items.map((item) => (
+
+                <span key={item}>
+                  {item}
+                </span>
+
+              ))}
+
+            </div>
+
 
           </motion.div>
 
         ))}
 
       </div>
+
+
     </section>
   );
 }

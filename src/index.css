@@ -20,6 +20,36 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+.hero-stack {
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  margin-top:32px;
+
+}
+
+
+
+.hero-stack span {
+
+  padding:8px 14px;
+
+  border-radius:999px;
+
+  background:rgba(255,255,255,0.05);
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  color:var(--muted);
+
+  font-size:14px;
+
+}
+
 .hero {
   min-height: 100vh;
   padding: 80px 8%;
@@ -207,6 +237,7 @@ h1 {
     align-items: flex-start;
   }
 }
+/* Skills */
 
 .skills,
 .about,
@@ -228,15 +259,22 @@ h1 {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 18px;
 }
 
 .skill-card {
-  border: 1px solid #1f1f1f;
-  border-radius: 28px;
+  min-height: 170px;
   padding: 28px;
-  background: #0d0d0d;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  transition: 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
 }
 
 .skill-card h3 {
@@ -244,11 +282,21 @@ h1 {
   color: var(--accent);
 }
 
-.skill-card ul {
-  list-style: none;
-  display: grid;
-  gap: 12px;
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tags span {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
   color: var(--muted);
+  font-size: 14px;
 }
 
 .about p {
@@ -277,14 +325,98 @@ h1 {
   border: 1px solid #2a2a2a;
   padding: 14px 22px;
   border-radius: 999px;
+  transition: 0.3s ease;
 }
 
 .footer-links a:hover {
   border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.25);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
   .skills-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Premium interactions */
+
+.hero-buttons a {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-buttons a:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.35);
+}
+
+.hero-buttons a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transition: 0.5s;
+}
+
+.hero-buttons a:hover::before {
+  left: 100%;
+}
+
+.hero-stack span {
+  transition: transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-stack span:hover {
+  transform: translateY(-4px);
+  color: white;
+  border-color: var(--accent);
+}
+
+.nav-links a {
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.stack span,
+.skill-tags span {
+  transition: 0.3s ease;
+}
+
+.stack span:hover,
+.skill-tags span:hover {
+  color: white;
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+::selection {
+  background: var(--accent);
+  color: white;
 }
