@@ -13,7 +13,7 @@ const projects = [
       "Framer Motion",
       "Responsive Design",
     ],
-    demo: "https://invitacion-demo-sepia.vercel.app/",
+    demo: "https://fiesta-de-leo.vercel.app/",
     category: "CLIENT WORK",
   },
 
