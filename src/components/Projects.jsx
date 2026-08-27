@@ -1,227 +1,236 @@
 import { motion } from "framer-motion";
 
-import essenza from "../assets/projects/essenza.JPG";
-import excentrycal from "../assets/projects/excentrycal.JPG";
-import raikoz from "../assets/projects/essenza.JPG";
-
-
 const projects = [
   {
     number: "01",
-    title: "Essenza Motors",
-    type: "Plataforma automotriz premium",
-    image: essenza,
+    title: "Invitaciones Digitales",
+    type: "Experiencias web para eventos",
     description:
-      "Diseño y desarrollo de una experiencia web enfocada en vehículos de alta gama. Creación de interfaz moderna, responsive design y optimización de experiencia de usuario.",
-    stack: ["React", "JavaScript", "CSS", "UX/UI"],
-    demo: "https://pagina-web-demo.vercel.app/",
-    github: "https://github.com/David30Mtz",
+      "Diseño y desarrollo de experiencias digitales personalizadas para bodas y eventos, integrando animaciones, música, ubicación, cuenta regresiva, RSVP y diseño responsive.",
+    stack: [
+      "React",
+      "JavaScript",
+      "Framer Motion",
+      "Responsive Design",
+    ],
+    demo: "https://invitacion-demo-sepia.vercel.app/",
+    category: "CLIENT WORK",
   },
 
   {
     number: "02",
-    title: "Excentrycal Shop",
-    type: "Aplicación e-commerce fullstack",
-    image: excentrycal,
+    title: "Panadería Digital",
+    type: "Digitalización de negocio",
     description:
-      "Desarrollo de plataforma e-commerce con frontend, backend, manejo de datos y funcionalidades enfocadas en administración y experiencia de compra.",
+      "Propuesta digital desarrollada para modernizar la presencia de una panadería y explorar nuevas formas de conectar su operación física con herramientas web.",
     stack: [
       "React",
-      "Node",
-      "Backend",
-      "Database",
-      "API"
+      "JavaScript",
+      "UI Design",
+      "Business Digitalization",
     ],
-    demo: "https://excentrycalshop.vercel.app/",
-    github: "https://github.com/David30MtzB",
+    demo: "https://demo-panaderia-funcional.vercel.app/",
+    category: "BUSINESS",
   },
 
   {
     number: "03",
-    title: "Raikoz",
-    type: "E-commerce",
-    image: raikoz,
+    title: "Essenza Motors",
+    type: "Experiencia automotriz premium",
     description:
-      "Implementación y personalización de tienda digital en Shopify, trabajando diseño visual, estructura de contenido y experiencia enfocada en conversión.",
+      "Concepto web centrado en vehículos de alta gama, desarrollado para explorar interfaces editoriales, navegación visual y una experiencia frontend con estética premium.",
     stack: [
-      "Shopify",
+      "React",
+      "JavaScript",
+      "CSS",
       "UX/UI",
-      "E-commerce",
-      "Marketing Digital"
     ],
-    demo: "TU LINK",
-    github: "#",
+    demo: "https://pagina-web-demo.vercel.app/",
+    category: "WEB EXPERIENCE",
   },
 ];
 
-
-
 function Projects() {
+  return (
+    <section className="projects" id="projects">
+
+      <motion.div
+        className="projects-heading"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.7 }}
+      >
+        <div className="projects-heading-top">
+          <p className="section-label">
+            SELECTED WORK
+          </p>
+
+          <span className="projects-count">
+            03 / PROYECTOS
+          </span>
+        </div>
 
+        <h2>
+          Proyectos que mezclan
+          <span> diseño, código y propósito.</span>
+        </h2>
 
-return (
+        <p className="projects-intro">
+          Una selección de experiencias digitales desarrolladas para
+          clientes, negocios y conceptos web.
+        </p>
+      </motion.div>
 
-<section className="projects" id="projects">
 
+      <div className="projects-list">
 
-<p className="section-label">
-PROYECTOS
-</p>
+        {projects.map((project, index) => (
 
+          <motion.article
+            className="project-card-v2"
+            key={project.number}
 
-<h2>
-Experiencias digitales creadas con diseño y tecnología.
-</h2>
+            initial={{
+              opacity: 0,
+              y: 70,
+            }}
 
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
 
+            viewport={{
+              once: true,
+              amount: 0.15,
+            }}
 
-<div className="projects-list">
+            transition={{
+              duration: 0.75,
+              delay: index * 0.08,
+            }}
+          >
 
+            <div className="project-preview">
 
-{projects.map((project)=>(
+              <div className="project-browser">
 
+                <div className="browser-bar">
 
-<motion.article
+                  <div className="browser-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
 
-className="project-card"
+                  <div className="browser-address">
+                    {project.title}
+                  </div>
 
-key={project.number}
+                  <span className="browser-index">
+                    {project.number}
+                  </span>
 
+                </div>
 
-initial={{
-opacity:0,
-y:60
-}}
 
-whileInView={{
-opacity:1,
-y:0
-}}
+                <div className="project-frame-wrapper">
 
-viewport={{
-once:true
-}}
+                  <iframe
+                    src={project.demo}
+                    title={`Preview de ${project.title}`}
+                    loading="lazy"
+                    className="project-frame"
+                    tabIndex="-1"
+                  />
 
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="preview-overlay"
+                    aria-label={`Abrir ${project.title}`}
+                  >
+                    <span>
+                      Abrir proyecto ↗
+                    </span>
+                  </a>
 
-transition={{
-duration:.7
-}}
+                </div>
 
->
+              </div>
 
+            </div>
 
-<img
 
-src={project.image}
+            <div className="project-info">
 
-alt={project.title}
+              <div className="project-meta">
 
-className="project-image"
+                <span className="project-number-v2">
+                  {project.number}
+                </span>
 
-/>
+                <span className="project-category">
+                  {project.category}
+                </span>
 
+              </div>
 
 
-<div className="project-content">
+              <div className="project-copy">
 
+                <p className="project-type-v2">
+                  {project.type}
+                </p>
 
-<span className="project-number">
+                <h3>
+                  {project.title}
+                </h3>
 
-{project.number}
+                <p className="project-description-v2">
+                  {project.description}
+                </p>
 
-</span>
+              </div>
 
 
-<p className="project-type">
+              <div className="project-bottom">
 
-{project.type}
+                <div className="project-stack-v2">
 
-</p>
+                  {project.stack.map((tech) => (
+                    <span key={tech}>
+                      {tech}
+                    </span>
+                  ))}
 
+                </div>
 
-<h3>
 
-{project.title}
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-arrow"
+                  aria-label={`Ver ${project.title}`}
+                >
+                  ↗
+                </a>
 
-</h3>
+              </div>
 
+            </div>
 
-<p className="project-description">
+          </motion.article>
 
-{project.description}
+        ))}
 
-</p>
+      </div>
 
-
-
-
-<div className="stack">
-
-
-{project.stack.map((tech)=>(
-
-
-<span key={tech}>
-
-{tech}
-
-</span>
-
-
-))}
-
-
-</div>
-
-
-
-<div className="project-links">
-
-
-<a 
-href={project.demo}
-target="_blank"
->
-
-Ver proyecto ↗
-
-</a>
-
-
-<a 
-href={project.github}
-target="_blank"
->
-
-Código
-
-</a>
-
-
-</div>
-
-
-
-</div>
-
-
-</motion.article>
-
-
-))}
-
-
-</div>
-
-
-</section>
-
-
-);
-
-
+    </section>
+  );
 }
-
-
 
 export default Projects;

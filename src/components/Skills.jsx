@@ -1,63 +1,111 @@
 import { motion } from "framer-motion";
 
-const skills = [
+const skillGroups = [
   {
-    title: "Frontend",
-    items: ["React", "Vue", "JavaScript", "HTML5", "CSS3"],
-  },
-  {
-    title: "Diseño UX/UI",
+    number: "01",
+    title: "Frontend Development",
+    description:
+      "Interfaces modernas, responsivas y enfocadas en una experiencia clara y visualmente cuidada.",
     items: [
-      "Figma",
-      "Wireframes",
-      "Prototipos",
-      "Responsive Design",
+      "React",
+      "Vue 3",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Framer Motion",
     ],
   },
   {
-    title: "Desarrollo",
+    number: "02",
+    title: "Backend & Data",
+    description:
+      "Integración de lógica, APIs y bases de datos para construir soluciones web más completas.",
     items: [
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "MySQL",
+      "Supabase",
       "Python",
-      "Java",
-      "C#",
-      "Laravel",
     ],
   },
   {
-    title: "Herramientas",
+    number: "03",
+    title: "Design & Experience",
+    description:
+      "Diseño de experiencias digitales buscando equilibrio entre estética, claridad y funcionalidad.",
     items: [
-      "Git/GitHub",
-      "Blender",
-      "Unity",
+      "UI Design",
+      "UX",
+      "Responsive Design",
+      "Wireframes",
+      "Prototyping",
+      "Figma",
+    ],
+  },
+  {
+    number: "04",
+    title: "Workflow & Platforms",
+    description:
+      "Herramientas que utilizo para desarrollar, versionar, desplegar y mantener proyectos digitales.",
+    items: [
+      "Git",
+      "GitHub",
+      "Vercel",
       "WordPress",
+      "Unity",
+      "Blender",
     ],
   },
 ];
 
 function Skills() {
   return (
-    <section className="skills">
+    <section className="skills" id="skills">
 
-      <p className="section-label">
-        TECNOLOGÍAS
-      </p>
+      <motion.div
+        className="skills-heading"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.7 }}
+      >
+        <div className="skills-heading-top">
 
-      <h2>
-        Herramientas que utilizo para crear experiencias digitales.
-      </h2>
+          <p className="section-label">
+            CAPABILITIES
+          </p>
+
+          <span className="skills-count">
+            STACK / TOOLS
+          </span>
+
+        </div>
+
+        <h2>
+          Herramientas para convertir
+          <span> ideas en productos digitales.</span>
+        </h2>
+
+        <p className="skills-intro">
+          Trabajo combinando desarrollo, diseño y herramientas digitales
+          según lo que necesita cada proyecto.
+        </p>
+
+      </motion.div>
 
 
-      <div className="skills-grid">
+      <div className="skills-list">
 
-        {skills.map((skill, index) => (
+        {skillGroups.map((skill, index) => (
 
-          <motion.div
-            className="skill-card"
+          <motion.article
+            className="skill-row-v2"
             key={skill.title}
 
             initial={{
               opacity: 0,
-              y: 40,
+              y: 35,
             }}
 
             whileInView={{
@@ -67,19 +115,34 @@ function Skills() {
 
             viewport={{
               once: true,
+              amount: 0.25,
             }}
 
             transition={{
-              duration: 0.5,
-              delay: index * 0.12,
+              duration: 0.6,
+              delay: index * 0.07,
             }}
           >
 
-            <h3>
-              {skill.title}
-            </h3>
+            <div className="skill-number-v2">
+              {skill.number}
+            </div>
 
-            <div className="skill-tags">
+
+            <div className="skill-main-v2">
+
+              <h3>
+                {skill.title}
+              </h3>
+
+              <p>
+                {skill.description}
+              </p>
+
+            </div>
+
+
+            <div className="skill-tags-v2">
 
               {skill.items.map((item) => (
 
@@ -91,13 +154,11 @@ function Skills() {
 
             </div>
 
-
-          </motion.div>
+          </motion.article>
 
         ))}
 
       </div>
-
 
     </section>
   );

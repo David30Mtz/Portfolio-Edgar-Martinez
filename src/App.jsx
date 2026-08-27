@@ -21,62 +21,59 @@ function App() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: "easeOut" }}
         >
-          <motion.p
-            className="eyebrow"
+          <motion.div
+            className="hero-topline"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
+            transition={{ delay: 0.25, duration: 0.8 }}
           >
-            EDGAR MARTÍNEZ
-          </motion.p>
+            <p className="eyebrow">EDGAR MARTÍNEZ</p>
+
+            <span className="hero-role">
+              WEB DEVELOPER · DIGITAL SOLUTIONS
+            </span>
+          </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.9 }}
+            transition={{ delay: 0.15, duration: 0.9 }}
           >
-            Frontend Developer <br />
-            UX/UI Designer
+            Diseño y desarrollo
+            <br />
+            <span>experiencias digitales.</span>
           </motion.h1>
 
-          <motion.p
-            className="hero-text"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-          >
-            Creo experiencias digitales donde el diseño, la tecnología y la
-            estrategia se unen para construir productos funcionales.
-          </motion.p>
-
           <motion.div
-            className="hero-buttons"
+            className="hero-bottom"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.7 }}
+            transition={{ delay: 0.45, duration: 0.8 }}
           >
-            <a href="#projects">Ver proyectos</a>
+            <p className="hero-text">
+              Construyo sitios y productos web donde diseño, código y estrategia
+              trabajan juntos para resolver necesidades reales.
+            </p>
 
-            <a href="#contact" className="secondary">
-              Contacto
-            </a>
+            <div className="hero-actions">
+              <div className="hero-buttons">
+                <a href="#projects">
+                  Explorar proyectos <span>↘</span>
+                </a>
 
-            <a href="/CV_EdgarMartinezVF.pdf" download className="secondary">
-              Descargar CV
-            </a>
-          </motion.div>
+                <a href="#contact" className="secondary">
+                  Hablemos
+                </a>
+              </div>
 
-          <motion.div
-            className="hero-stack"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.8 }}
-          >
-            <span>React</span>
-            <span>Vue</span>
-            <span>JavaScript</span>
-            <span>UX/UI</span>
-            <span>Frontend</span>
+              <a
+                href="/CV_EdgarMartinezVF.pdf"
+                download
+                className="cv-link"
+              >
+                Descargar CV <span>↗</span>
+              </a>
+            </div>
           </motion.div>
         </motion.section>
 
